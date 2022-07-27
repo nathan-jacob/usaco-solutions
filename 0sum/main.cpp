@@ -1,5 +1,5 @@
 /*
-ID: nathan.31
+ID: 
 PROG: zerosum
 LANG: C++
 */
