@@ -1,0 +1,3 @@
+/Users/nathanjacob/CLionProjects/numtri/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/nathanjacob/CLionProjects/numtri/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/nathanjacob/CLionProjects/numtri/cmake-build-debug/CMakeFiles/numtri.dir

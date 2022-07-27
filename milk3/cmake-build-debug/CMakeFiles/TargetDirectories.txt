@@ -1,0 +1,3 @@
+/Users/nathanjacob/CLionProjects/milk3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/nathanjacob/CLionProjects/milk3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/nathanjacob/CLionProjects/milk3/cmake-build-debug/CMakeFiles/milk3.dir

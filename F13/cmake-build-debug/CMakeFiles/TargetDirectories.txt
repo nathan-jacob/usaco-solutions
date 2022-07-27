@@ -1,0 +1,3 @@
+/Users/nathanjacob/CLionProjects/F13/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/nathanjacob/CLionProjects/F13/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/nathanjacob/CLionProjects/F13/cmake-build-debug/CMakeFiles/F13.dir

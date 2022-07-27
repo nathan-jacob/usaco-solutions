@@ -1,0 +1,98 @@
+/*
+ID: nathan.31
+PROG: skidesign
+LANG: C++
+*/
+include <iostream>
+#include <vector>
+#include <climits>
+#include <string>
+#include <algorithm>
+#include <math.h>
+using namespace std;
+int square(int n) {
+    return pow(n, 2);
+}
+int cost(int q, int m[], double N, int mid[]) {
+    int cost = 0;
+    if ((m[((int) N)-1] - m[0]) <= 17)
+        return 0;
+    if (q < mid[0]) {
+        for (int i = 0; i < N; ++i) {
+            if (i < q) {
+                cost += square(m[q] - m[i]);
+//                cout << "i: " << i << " m[i]: " << m[i] << " cost is " << cost << " because we added " << (m[q] - m[i]) << " and sqaured to get " << square(m[q] - m[i]) << endl;
+            }
+            if (m[i] > (m[q] + 17)) {
+                cost += square((m[i] - (m[q] + 17)));
+//                cout << "i: " << i << " m[i]: " << m[i] << " cost is " << cost << " because we removed " << (m[i] - (m[q] + 17)) << " and sqaured to get " << square((m[i] - (m[q] + 17))) << endl;
+            }
+        }
+    }
+    if (q > mid[1]) {
+        for (int i = 0; i < N; ++i) {
+            if (i > q) {
+                cost += square(m[i] - m[q]);
+            }
+            if (m[i] < (m[q] - 17)) {
+                cost += square(((m[q] - 17) - m[i]));
+            }
+        }
+    }
+    if (q == mid[0] or q == mid[1]){
+        int cost2 = 0;
+        int cost3 = 0;
+        for (int i = 0; i < N; ++i) {
+            if (i < q) {
+                cost2 += square(m[q] - m[i]);
+            }
+            if (m[i] > (m[q] + 17)) {
+                cost2 += square((m[i] - (m[q] + 17)));
+            }
+        }
+        for (int i = 0; i < N; ++i) {
+            if (i > q) {
+                cost3 += square(m[i] - m[q]);
+            }
+            if (m[i] < (m[q] - 17)) {
+                cost3 += square(((m[q] - 17) - m[i]));
+            }
+        }
+        cost = (cost2 > cost3) ? cost3 : cost2;
+    }
+    return cost;
+}
+
+int main() {
+    freopen("skidesign.in", "r", stdin);
+    //freopen("skidesign.out", "w", stdout);
+    //std::cout << "Hello, World!" << std::endl;
+    double N;
+    int min = INT_MAX;
+    string space = " ";
+    cin >> N;
+    int M[(int) N];
+    for (int i = 0; i < N; ++i) {
+        cin >> M[i];
+    }
+    sort(M, M+ (int) N);
+    for (int i = 0; i < N; ++i) {
+        cout << M[i] << space;
+    }
+    cout << endl;
+//    cout << cost(2, M, N);
+    int middle[2] = { (int) floor((N-1)/2), (int) ceil((N-1)/2)};
+    for (int i = 0; i < 2; ++i) {
+        cout << "middle " << i << " is " << middle[i] << " = " << M[middle[i]] << endl;
+    }
+    for (int i = 0; i < N; ++i) {
+        int costa = cost(i, M, N, middle);
+        min = (costa > min) ? min : costa;
+        cout << "i: " << i << " m[i]: " << M[i] << " cost: " << costa << endl;
+    }
+//        int costa = cost(19, M, N, middle);
+//        cout << "i: " << 19 << " m[i]: " << M[19] << " cost: " << costa << endl;
+
+    cout << min << endl;
+    return 0;
+}#

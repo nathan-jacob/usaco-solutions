@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/nathanjacob/CLionProjects/dualpal/main.cpp
+iostream
+-
+fstream
+-
+string
+-
+algorithm
+-
+stdio.h
+-
+stdlib.h
+-
+
